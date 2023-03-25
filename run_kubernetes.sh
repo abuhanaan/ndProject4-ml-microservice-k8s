@@ -4,15 +4,13 @@
 
 # Step 1:
 # This is your Docker ID/path
-# dockerpath=<>
-dockerpath="abuhanaan/simple-flask"
+dockerpath=abuhanaan/ml-k8s-microsevice-p4
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run mysimpleflaskdemo\
-    --generator=run-pod/v1\
+kubectl run ml-k8s-microsevice-p4\
     --image=$dockerpath\
-    --port=80 --labels app=mysimpleflaskdemo
+    --port=80 --labels app=ml-k8s-microsevice-p4
 
 
 # Step 3:
@@ -21,5 +19,5 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward flaskskearlndemo 8000:80
+kubectl port-forward ml-k8s-microsevice-p4 8000:80
 
